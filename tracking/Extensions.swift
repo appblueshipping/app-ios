@@ -146,3 +146,11 @@ extension UIImage {
     }
     
 }
+
+extension String {
+    
+    static func className(aClass: AnyClass) -> String {
+        return NSStringFromClass(aClass).components(separatedBy: ".").last!
+    }
+    
+}

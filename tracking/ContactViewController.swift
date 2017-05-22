@@ -26,8 +26,8 @@ class ContactViewController: UIViewController {
     func initSubViews() {
         self.navigationItem.titleView = logoView
         self.navigationItem.titleView = logoView
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LOGOUT", style: .plain, target: nil, action: nil)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_settings_white"), style: .plain, target: self, action: #selector(goToSettings))
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LOGOUT", style: .plain, target: nil, action: nil)
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_settings_white"), style: .plain, target: self, action: #selector(goToSettings))
         self.dismissKeyboard()
     }
 

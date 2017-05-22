@@ -15,7 +15,10 @@ class TrackResultViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var headerView: UIView!
     
-    var dates = ["26/04", "10/05", "12/05", "02/06", "09/07"]
+    var trackResult: [Tracking]?
+    
+    
+    var dates = ["26/04/2017", "10/05/2017", "12/05/2017", "02/0/20176", "09/07/2017"]
     var status = ["In transit on the ocean", "In transit on the ocean and this is a test to change height of cell", "In transit on the ocean", "In transit on the ocean", "Posted in Victoria's Porto"]
     var docs = [#imageLiteral(resourceName: "ic_insert_link_white"), #imageLiteral(resourceName: "ic_insert_link_white"), #imageLiteral(resourceName: "ic_insert_link_white"), #imageLiteral(resourceName: "ic_insert_link_white"), #imageLiteral(resourceName: "ic_insert_link_white")]
     
@@ -32,7 +35,7 @@ class TrackResultViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LOGOUT", style: .plain, target: nil, action: nil)
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LOGOUT", style: .plain, target: nil, action: nil)
         
         self.tableView.tableHeaderView = headerView
         self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 1))
@@ -78,20 +81,25 @@ extension TrackResultViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dates.count
+        if let count = trackResult?.first?.status?.count {
+            return count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomCell
-        cell.lblDate.text = dates[indexPath.row]
-        cell.lblStatus.text = status[indexPath.row]
+        cell.lblDate.text = trackResult?.first?.status?[indexPath.row].data
+        cell.lblStatus.text = trackResult?.first?.status?[indexPath.row].status
 
         let contentSize = cell.lblStatus.sizeThatFits(cell.lblStatus.bounds.size)
         var frame = cell.lblStatus.frame
         frame.size.height = contentSize.height
         cell.lblStatus.frame = frame
         
-        cell.imgUpload.image = docs[indexPath.row]
+        if trackResult?.first?.status?[indexPath.row].document != "false" {
+            cell.imgUpload.image = #imageLiteral(resourceName: "ic_insert_link_white")
+        }
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         

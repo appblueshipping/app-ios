@@ -54,6 +54,15 @@
 		129F39481ECA4D6800C67D72 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129F39471ECA4D6800C67D72 /* NewUserViewController.swift */; };
 		12F9FB9E1EC61D6D00F9D115 /* UnderlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F9FB9D1EC61D6D00F9D115 /* UnderlinedLabel.swift */; };
 		12F9FBA21EC6361600F9D115 /* TrackResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F9FBA11EC6361600F9D115 /* TrackResultViewController.swift */; };
+		12FA21BD1ED32E1A00444F2C /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA21BC1ED32E1A00444F2C /* AppPreferences.swift */; };
+		12FA21BF1ED358D300444F2C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA21BE1ED358D300444F2C /* BaseViewController.swift */; };
+		12FA21C41ED35E0300444F2C /* SWConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA21C21ED35E0300444F2C /* SWConnection.swift */; };
+		12FA21C51ED35E0300444F2C /* SWResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA21C31ED35E0300444F2C /* SWResult.swift */; };
+		12FA21C71ED35E1400444F2C /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA21C61ED35E1400444F2C /* BaseService.swift */; };
+		12FA21C91ED35E6200444F2C /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA21C81ED35E6200444F2C /* TrackingService.swift */; };
+		12FA21CB1ED3669300444F2C /* SWUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA21CA1ED3669300444F2C /* SWUtils.swift */; };
+		12FA21CE1ED36CD500444F2C /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA21CD1ED36CD500444F2C /* Tracking.swift */; };
+		12FA21D01ED3845100444F2C /* TrackingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA21CF1ED3845100444F2C /* TrackingStatus.swift */; };
 		3F15B9A0D1EFC49A57F102E1 /* Pods_trackingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264E2B868460057831EC3564 /* Pods_trackingUITests.framework */; };
 		8E8DF3C0EA82CA8B0B5420C5 /* Pods_tracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F96A3BA3888859C51E33306 /* Pods_tracking.framework */; };
 		CF5F3E5CF746490DF6EA56F5 /* Pods_trackingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4391F13D525331DD6A675169 /* Pods_trackingTests.framework */; };
@@ -133,6 +142,15 @@
 		129F39471ECA4D6800C67D72 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		12F9FB9D1EC61D6D00F9D115 /* UnderlinedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedLabel.swift; sourceTree = "<group>"; };
 		12F9FBA11EC6361600F9D115 /* TrackResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackResultViewController.swift; sourceTree = "<group>"; };
+		12FA21BC1ED32E1A00444F2C /* AppPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPreferences.swift; sourceTree = "<group>"; };
+		12FA21BE1ED358D300444F2C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		12FA21C21ED35E0300444F2C /* SWConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWConnection.swift; sourceTree = "<group>"; };
+		12FA21C31ED35E0300444F2C /* SWResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWResult.swift; sourceTree = "<group>"; };
+		12FA21C61ED35E1400444F2C /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		12FA21C81ED35E6200444F2C /* TrackingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
+		12FA21CA1ED3669300444F2C /* SWUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWUtils.swift; sourceTree = "<group>"; };
+		12FA21CD1ED36CD500444F2C /* Tracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
+		12FA21CF1ED3845100444F2C /* TrackingStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingStatus.swift; sourceTree = "<group>"; };
 		264E2B868460057831EC3564 /* Pods_trackingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trackingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3159421B4A4C740D22DF8F6D /* Pods-tracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tracking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tracking/Pods-tracking.debug.xcconfig"; sourceTree = "<group>"; };
 		3E1EEC80080EA5F3ABA756EC /* Pods-tracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tracking.release.xcconfig"; path = "Pods/Target Support Files/Pods-tracking/Pods-tracking.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +253,8 @@
 				1266B01C1ECB66EF00D6DBDB /* Fonts */,
 				127D7C031EC603B1009AF839 /* Custom View */,
 				127D7BFF1EC5FFDC009AF839 /* Extensions */,
+				12FA21C01ED35D6500444F2C /* Rest */,
+				12FA21CC1ED36BC900444F2C /* Model */,
 				127D7BFA1EC5F04E009AF839 /* ViewControllers */,
 				127D7BC91EC5EA86009AF839 /* Main.storyboard */,
 				127D7BCE1EC5EA86009AF839 /* LaunchScreen.storyboard */,
@@ -267,6 +287,7 @@
 			children = (
 				127D7BF41EC5F003009AF839 /* AboutViewController.swift */,
 				127D7BFD1EC5F933009AF839 /* AuthenticateViewController.swift */,
+				12FA21BE1ED358D300444F2C /* BaseViewController.swift */,
 				127D7BFB1EC5F821009AF839 /* BrowserViewController.swift */,
 				127D7BF81EC5F02C009AF839 /* ContactViewController.swift */,
 				1266B01A1ECB58EA00D6DBDB /* MyTabBarController.swift */,
@@ -289,7 +310,9 @@
 		127D7C021EC6039C009AF839 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				12FA21C11ED35D8200444F2C /* SWFramework */,
 				127D7BC51EC5EA86009AF839 /* AppDelegate.swift */,
+				12FA21BC1ED32E1A00444F2C /* AppPreferences.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -302,6 +325,34 @@
 				125E834A1EC6552F00CB0F68 /* CustomCell.swift */,
 			);
 			name = "Custom View";
+			sourceTree = "<group>";
+		};
+		12FA21C01ED35D6500444F2C /* Rest */ = {
+			isa = PBXGroup;
+			children = (
+				12FA21C61ED35E1400444F2C /* BaseService.swift */,
+				12FA21C81ED35E6200444F2C /* TrackingService.swift */,
+			);
+			name = Rest;
+			sourceTree = "<group>";
+		};
+		12FA21C11ED35D8200444F2C /* SWFramework */ = {
+			isa = PBXGroup;
+			children = (
+				12FA21CA1ED3669300444F2C /* SWUtils.swift */,
+				12FA21C21ED35E0300444F2C /* SWConnection.swift */,
+				12FA21C31ED35E0300444F2C /* SWResult.swift */,
+			);
+			name = SWFramework;
+			sourceTree = "<group>";
+		};
+		12FA21CC1ED36BC900444F2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12FA21CD1ED36CD500444F2C /* Tracking.swift */,
+				12FA21CF1ED3845100444F2C /* TrackingStatus.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		19D0B19F2E7BDE3C5F716112 /* Frameworks */ = {
@@ -637,20 +688,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12FA21C51ED35E0300444F2C /* SWResult.swift in Sources */,
+				12FA21BD1ED32E1A00444F2C /* AppPreferences.swift in Sources */,
 				127D7BF51EC5F003009AF839 /* AboutViewController.swift in Sources */,
 				127D7BF91EC5F02C009AF839 /* ContactViewController.swift in Sources */,
 				125E834B1EC6552F00CB0F68 /* CustomCell.swift in Sources */,
 				127D7BFC1EC5F821009AF839 /* BrowserViewController.swift in Sources */,
 				12F9FBA21EC6361600F9D115 /* TrackResultViewController.swift in Sources */,
 				127D7C051EC603BB009AF839 /* RoundedButton.swift in Sources */,
+				12FA21C91ED35E6200444F2C /* TrackingService.swift in Sources */,
 				127D7BF71EC5F01D009AF839 /* TrackViewController.swift in Sources */,
+				12FA21D01ED3845100444F2C /* TrackingStatus.swift in Sources */,
 				127D7BFE1EC5F933009AF839 /* AuthenticateViewController.swift in Sources */,
 				1295FCAB1ECB1FBA00AFF3DB /* PreferencesViewController.swift in Sources */,
+				12FA21CE1ED36CD500444F2C /* Tracking.swift in Sources */,
 				12F9FB9E1EC61D6D00F9D115 /* UnderlinedLabel.swift in Sources */,
+				12FA21C71ED35E1400444F2C /* BaseService.swift in Sources */,
 				127D7BC61EC5EA86009AF839 /* AppDelegate.swift in Sources */,
 				129F39481ECA4D6800C67D72 /* NewUserViewController.swift in Sources */,
+				12FA21BF1ED358D300444F2C /* BaseViewController.swift in Sources */,
+				12FA21C41ED35E0300444F2C /* SWConnection.swift in Sources */,
 				1236B0FC1EC9D71A0004A9EA /* Extensions.swift in Sources */,
 				1266B01B1ECB58EA00D6DBDB /* MyTabBarController.swift in Sources */,
+				12FA21CB1ED3669300444F2C /* SWUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
