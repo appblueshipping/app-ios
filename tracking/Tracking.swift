@@ -21,7 +21,7 @@ class Tracking {
     var origin: String?
     var finaldestination: String?
     var exporter: String?
-    var datainicio: String?
+    var initialDate: String?
     
     var status: [TrackingStatus]?
     
@@ -31,18 +31,28 @@ class Tracking {
         
         
         if dict != nil {
-            self.blawb            = dict!["blawb"] as? String
-            self.type             = dict!["type"] as? String
-            self.company          = dict!["company"] as? String
-            self.origin           = dict!["origin"] as? String
-            self.finaldestination = dict!["finaldestination"] as? String
-            self.exporter         = dict!["exporter"] as? String
-            self.datainicio       = dict!["datainicio"] as? String
             
-            let statusGeral = dict!["statusgeral"] as! [TrackingStatus]
+            self.status = [TrackingStatus]()
+            let acf = dict!["acf"] as? [String:Any]
+
+            self.blawb            = acf!["blawb"] as? String
+            self.type             = acf!["type"] as? String
+            self.company          = acf!["company"] as? String
+            self.origin           = acf!["origin"] as? String
+            self.finaldestination = acf!["finaldestination"] as? String
+            self.exporter         = acf!["exporter"] as? String
+            self.initialDate       = acf!["datainicio"] as? String
+            
+            let statusGeral = acf!["statusgeral"] as! [[String: AnyObject]]
             
             for status in statusGeral {
-                self.status?.append(status)
+                
+                let trackingStatus = TrackingStatus()
+                trackingStatus.data = status["data"] as? String
+                trackingStatus.document = status["documento"] as? String
+                trackingStatus.status = status["status"] as? String
+                
+                self.status?.append(trackingStatus)
             }
             
         } else {

@@ -52,6 +52,7 @@ class TrackViewController: BaseViewController {
     
     @IBAction func searchPackageAction(_ sender: Any) {
     
+        txtTrackNumber.resignFirstResponder()
         trackingAction()
         
     }
@@ -114,6 +115,7 @@ extension TrackViewController: KeyboardObserversProtocol, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
+        txtTrackNumber.resignFirstResponder()
         trackingAction()
         
         return true
@@ -130,17 +132,19 @@ extension TrackViewController {
         Tracking().tracking(trackNumber: trackNumber) { (success, result, trackingResult) in
             self.removeLoadingInView()
             
-            DispatchQueue.main.async {
-                if success {
+            if success {
+                
+                DispatchQueue.main.async {
                     
                     if trackingResult?.count == 0 {
                         self.showPopUp()
                         return
                     }
-                    
+
                     self.track = trackingResult
                     self.goToResultViewController()
                 }
+                
             }
             
         }
