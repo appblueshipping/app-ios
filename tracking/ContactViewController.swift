@@ -61,9 +61,7 @@ extension ContactViewController: MFMailComposeViewControllerDelegate {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["jlima@anaivtecnologia.com.br"])
-            mail.setSubject("Teste")
-            mail.setMessageBody("Teste", isHTML: true)
+            mail.setToRecipients(["app@blueshipping.com.br"])
             
             self.present(mail, animated: true, completion: nil)
         } else {
