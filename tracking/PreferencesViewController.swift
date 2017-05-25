@@ -17,5 +17,9 @@ class PreferencesViewController: UIViewController {
         self.navigationItem.titleView = logoView
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.registerGoogleAnalytics(classForCoder: self.classForCoder)
+    }
 
 }

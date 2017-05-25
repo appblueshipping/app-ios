@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 // MARK: - UIViewController
 extension UIViewController {
@@ -64,6 +65,18 @@ extension UIViewController {
         }
     }
     
+    func registerGoogleAnalytics(classForCoder:AnyClass) {
+        
+        let bundleIdentifier = Bundle.main.bundleIdentifier
+        
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        tracker.set(kGAIScreenName, value: "\(bundleIdentifier!).\(classForCoder.self)")
+        
+        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
+        tracker.send(builder.build() as [NSObject : AnyObject])
+        
+    }
+    
 }
 
 // MARK: - UITabBarItem
@@ -88,7 +101,7 @@ extension UIColor {
         }
     }
     
-    private func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
+    func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
         
         let scanner = Scanner(string:colorCode)
         var color:UInt32 = 0;
@@ -143,6 +156,31 @@ extension UIImage {
     
     func tabBarImageWithCustomTint() -> UIImage {
         return self.withRenderingMode(.alwaysOriginal)
+    }
+    
+}
+
+// MARK: - UIImageView
+extension UIImageView {
+    
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
+    }
+    
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { () -> Void in
+                self.image = image
+            }
+            }.resume()
     }
     
 }

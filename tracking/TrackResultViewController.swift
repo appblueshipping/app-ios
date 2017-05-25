@@ -31,6 +31,10 @@ class TrackResultViewController: UIViewController {
         self.initSubviews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.registerGoogleAnalytics(classForCoder: self.classForCoder)
+    }
+    
     func initSubviews() {
         self.navigationItem.titleView = logoView
         

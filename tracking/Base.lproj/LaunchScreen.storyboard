@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,29 +18,36 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="UxX-iX-vu8">
-                                <rect key="frame" x="40" y="164" width="240" height="240"/>
+                                <rect key="frame" x="40" y="120" width="240" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="Ze0-Mw-VAR"/>
-                                    <constraint firstAttribute="width" constant="240" id="e9k-oG-dSC"/>
+                                    <constraint firstAttribute="height" constant="240" id="4td-Pz-Oez"/>
+                                    <constraint firstAttribute="width" constant="240" id="uxH-fc-y5z"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017 Blue Shipping do Brasil. All rights reserved " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-kw-fhL">
+                                <rect key="frame" x="21" y="457" width="278" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.027450980392156862" green="0.30196078431372547" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="UxX-iX-vu8" secondAttribute="trailing" constant="24" id="9e2-MZ-7Cs"/>
-                            <constraint firstItem="UxX-iX-vu8" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="144" id="9lo-ZJ-M7a"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="UxX-iX-vu8" secondAttribute="bottom" constant="164" id="snm-Oc-cn7"/>
-                            <constraint firstItem="UxX-iX-vu8" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="24" id="xyh-8v-gVT"/>
+                            <constraint firstItem="dgS-kw-fhL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="5" id="6yi-25-2di"/>
+                            <constraint firstItem="UxX-iX-vu8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="IMe-WB-Rhl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dgS-kw-fhL" secondAttribute="trailing" constant="5" id="kPn-wn-nbv"/>
+                            <constraint firstItem="UxX-iX-vu8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sfY-b0-YFh"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dgS-kw-fhL" secondAttribute="bottom" constant="8.5" id="yUH-Or-XDT"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50.625" y="373.94366197183098"/>
+            <point key="canvasLocation" x="50.625" y="373.75"/>
         </scene>
     </scenes>
     <resources>

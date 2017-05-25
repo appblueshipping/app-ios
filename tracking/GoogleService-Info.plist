@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1073111712158-qhcprm28i4i3sm4nq5vs0avg0ncr82gs.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1073111712158-qhcprm28i4i3sm4nq5vs0avg0ncr82gs</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAccJViVjQFHq2R-i2_yk7PG-WAeqx3Z-s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1073111712158</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.blueshipping.tracking</string>
+	<key>PROJECT_ID</key>
+	<string>blueshippingdobrasil</string>
+	<key>STORAGE_BUCKET</key>
+	<string>blueshippingdobrasil.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<true/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<false/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<false/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1073111712158:ios:5c71d82ae2fa7fce</string>
+	<key>DATABASE_URL</key>
+	<string>https://blueshippingdobrasil.firebaseio.com</string>
+	<key>TRACKING_ID</key>
+	<string>UA-99926214-1</string>
+</dict>
+</plist>

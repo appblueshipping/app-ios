@@ -50,6 +50,7 @@
 		127D7BFC1EC5F821009AF839 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D7BFB1EC5F821009AF839 /* BrowserViewController.swift */; };
 		127D7BFE1EC5F933009AF839 /* AuthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D7BFD1EC5F933009AF839 /* AuthenticateViewController.swift */; };
 		127D7C051EC603BB009AF839 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D7C041EC603BB009AF839 /* RoundedButton.swift */; };
+		127E76BC1ED64F5000AC79C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 127E76BB1ED64F5000AC79C2 /* GoogleService-Info.plist */; };
 		1295FCAB1ECB1FBA00AFF3DB /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295FCAA1ECB1FBA00AFF3DB /* PreferencesViewController.swift */; };
 		129F39481ECA4D6800C67D72 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129F39471ECA4D6800C67D72 /* NewUserViewController.swift */; };
 		12F9FB9E1EC61D6D00F9D115 /* UnderlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F9FB9D1EC61D6D00F9D115 /* UnderlinedLabel.swift */; };
@@ -138,6 +139,7 @@
 		127D7BFB1EC5F821009AF839 /* BrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		127D7BFD1EC5F933009AF839 /* AuthenticateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateViewController.swift; sourceTree = "<group>"; };
 		127D7C041EC603BB009AF839 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		127E76BB1ED64F5000AC79C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1295FCAA1ECB1FBA00AFF3DB /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		129F39471ECA4D6800C67D72 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		12F9FB9D1EC61D6D00F9D115 /* UnderlinedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedLabel.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		127D7BC41EC5EA86009AF839 /* tracking */ = {
 			isa = PBXGroup;
 			children = (
+				127E76BB1ED64F5000AC79C2 /* GoogleService-Info.plist */,
 				127D7BF31EC5EC1A009AF839 /* tracking_header.h */,
 				127D7C021EC6039C009AF839 /* Supporting Files */,
 				1266B01C1ECB66EF00D6DBDB /* Fonts */,
@@ -455,7 +458,7 @@
 				TargetAttributes = {
 					127D7BC11EC5EA86009AF839 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 2XY29KN8GM;
+						DevelopmentTeam = 3E5K8BK7JT;
 						ProvisioningStyle = Automatic;
 					};
 					127D7BD51EC5EA86009AF839 = {
@@ -520,6 +523,7 @@
 				1266B0411ECB679200D6DBDB /* CoreSansD35Regular-Italic.otf in Resources */,
 				1266B04C1ECB679200D6DBDB /* CoreSansD57CnBold.otf in Resources */,
 				1266B04B1ECB679200D6DBDB /* CoreSansD57CnBold-Italic.otf in Resources */,
+				127E76BC1ED64F5000AC79C2 /* GoogleService-Info.plist in Resources */,
 				127D7BCB1EC5EA86009AF839 /* Main.storyboard in Resources */,
 				1266B0521ECB679200D6DBDB /* CoreSansD75Black.otf in Resources */,
 				1266B0391ECB679200D6DBDB /* CoreSansD15Thin-Italic.otf in Resources */,
@@ -866,13 +870,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2XY29KN8GM;
+				DEVELOPMENT_TEAM = 3E5K8BK7JT;
 				INFOPLIST_FILE = tracking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.blueshipping.tracking;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.blueshipping.track;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathalima/Documents/anaiv/projects/tracking/tracking/tracking_header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -883,13 +888,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2XY29KN8GM;
+				DEVELOPMENT_TEAM = 3E5K8BK7JT;
 				INFOPLIST_FILE = tracking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.blueshipping.tracking;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.blueshipping.track;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathalima/Documents/anaiv/projects/tracking/tracking/tracking_header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -16,6 +16,10 @@ class AuthenticateViewController: UIViewController {
         super.viewDidLoad()
         self.initSubViews()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.registerGoogleAnalytics(classForCoder: self.classForCoder)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

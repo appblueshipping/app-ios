@@ -16,7 +16,7 @@ enum BaseServiceError: Error {
 class BaseService: NSObject, SWConnectionDelegate {
     
     //Base URL
-	static let BASE_URL   =  "http://www.blueshipping.com.br/index.php/wp-json/wp/v2/"
+	static let BASE_URL   =  "https://www.blueshipping.com.br/index.php/wp-json/wp/v2/"
 
     //Alert Titles and Messages
     static let networErrorTitle     = "Sem acesso à internet"
