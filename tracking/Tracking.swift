@@ -77,6 +77,7 @@ class Tracking {
             
         } catch BaseServiceError.NetworkError {
             UIAlertController.simpleAlert(title: SWUtils.networErrorTitle, message: SWUtils.networErrorMessage)
+            completion(false, nil, [Tracking]())
         } catch {
             NSLog("Unknow error in: %@", TrackingService.identifier + "requestDealsService")
         }

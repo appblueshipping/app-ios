@@ -92,6 +92,7 @@ extension TrackResultViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomCell
+        cell.backgroundColor = cell.contentView.backgroundColor
         cell.lblDate.text = trackResult?.first?.status?[indexPath.row].data
         cell.lblStatus.text = trackResult?.first?.status?[indexPath.row].status
 
