@@ -25,6 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // NavigationBar
         UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white,
                                                              NSFontAttributeName: UIFont(name: "CoreSansD45Medium", size: 17)!], for: .normal)
+        
+        // Configure tracker from GoogleService-Info.plist.
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
+        
+        // Optional: configure GAI options.
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+            return true
+        }
+        gai.trackUncaughtExceptions = true  // report uncaught exceptions
+        gai.logger.logLevel = GAILogLevel.none  // remove before app release
         return true
     }
 

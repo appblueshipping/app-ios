@@ -15,13 +15,24 @@ class TrackResultViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var headerView: UIView!
     
-    var dates = ["26/04", "10/05", "12/05", "02/06", "09/07"]
-    var status = ["In transit on the ocean", "In transit on the ocean and this is a test to change height of cell", "In transit on the ocean", "In transit on the ocean", "Posted in Victoria's Porto"]
-    var docs = [#imageLiteral(resourceName: "ic_insert_link_white"), #imageLiteral(resourceName: "ic_insert_link_white"), #imageLiteral(resourceName: "ic_insert_link_white"), #imageLiteral(resourceName: "ic_insert_link_white"), #imageLiteral(resourceName: "ic_insert_link_white")]
+    // Info's labels
+    @IBOutlet weak var lblBlawb: UILabel!
+    @IBOutlet weak var lblType: UILabel!
+    @IBOutlet weak var lblCompany: UILabel!
+    @IBOutlet weak var lblOrigin: UILabel!
+    @IBOutlet weak var lblFinalDestination: UILabel!
+    @IBOutlet weak var lblExporter: UILabel!
+    @IBOutlet weak var lblInitialDate: UILabel!
+    
+    var trackResult: [Tracking]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initSubviews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.registerGoogleAnalytics(classForCoder: self.classForCoder)
     }
     
     func initSubviews() {
@@ -32,40 +43,35 @@ class TrackResultViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LOGOUT", style: .plain, target: nil, action: nil)
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LOGOUT", style: .plain, target: nil, action: nil)
         
         self.tableView.tableHeaderView = headerView
         self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 1))
+        
+        if trackResult != nil {
+            
+            lblBlawb.text = trackResult?.first?.blawb
+            lblType.text = trackResult?.first?.type
+            lblCompany.text = trackResult?.first?.company
+            lblOrigin.text = trackResult?.first?.origin
+            lblFinalDestination.text = trackResult?.first?.finaldestination
+            lblExporter.text = trackResult?.first?.exporter
+            lblInitialDate.text = trackResult?.first?.initialDate
+            
+        }
     }
     
     @objc func imageTapped(_ sender: AnyObject) {
         
-        print("\(sender.view.tag)")
+        if trackResult?.count != 0 {
+            let url = URL(string: trackResult!.first!.status![sender.view.tag].document!)
+            let browserViewController = storyboard?.instantiateViewController(withIdentifier: "browserViewController") as! BrowserViewController
+            
+            browserViewController.url = url
+            
+            self.present(browserViewController, animated: true, completion: nil)
+        }
         
-        let url = URL(string: "https://www.apple.com/lae/")
-        
-        let browserViewController = storyboard?.instantiateViewController(withIdentifier: "browserViewController") as! BrowserViewController
-        
-        browserViewController.url = url
-        
-        self.present(browserViewController, animated: true, completion: nil)
-        
-    }
-    
-    // TODO - To put in extension
-    func calculateHeight(textView:UITextView, data:String) -> CGRect {
-        
-        var newFrame:CGRect!
-        
-        textView.text = data
-        
-        let fixedWidth = textView.frame.size.width
-        textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        newFrame = textView.frame
-        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        print("height \(newFrame.height)")
-        return newFrame
     }
 
 }
@@ -78,41 +84,50 @@ extension TrackResultViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dates.count
+        if let count = trackResult?.first?.status?.count {
+            return count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomCell
-        cell.lblDate.text = dates[indexPath.row]
-        cell.lblStatus.text = status[indexPath.row]
+        cell.backgroundColor = cell.contentView.backgroundColor
+        cell.lblDate.text = trackResult?.first?.status?[indexPath.row].data
+        cell.lblStatus.text = trackResult?.first?.status?[indexPath.row].status
 
         let contentSize = cell.lblStatus.sizeThatFits(cell.lblStatus.bounds.size)
         var frame = cell.lblStatus.frame
         frame.size.height = contentSize.height
         cell.lblStatus.frame = frame
         
-        cell.imgUpload.image = docs[indexPath.row]
+        if trackResult?.first?.status?[indexPath.row].document != nil {
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+            cell.imgUpload.image = #imageLiteral(resourceName: "ic_insert_link_white")
+            cell.imgUpload.tag = indexPath.row
+            cell.imgUpload.isUserInteractionEnabled = true
+            cell.imgUpload.addGestureRecognizer(tapGestureRecognizer)
+        }
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-        
-        cell.imgUpload.tag = indexPath.row
-        cell.imgUpload.isUserInteractionEnabled = true
-        cell.imgUpload.addGestureRecognizer(tapGestureRecognizer)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomCell
-        cell.lblStatus.text = status[indexPath.row]
         
-        let contentSize = cell.lblStatus.sizeThatFits(cell.lblStatus.bounds.size)
-        var frame = cell.lblStatus.frame
-        frame.size.height = contentSize.height
-        //cell.lblStatus.frame = frame
+        if trackResult != nil {
+            cell.lblStatus.text = trackResult?.first?.status?[indexPath.row].status
+            
+            let contentSize = cell.lblStatus.sizeThatFits(cell.lblStatus.bounds.size)
+            var frame = cell.lblStatus.frame
+            frame.size.height = contentSize.height
+            
+            return frame.height + 14
+        }
         
-        return frame.height + 14
-        
+        return 44
+
     }
     
 }

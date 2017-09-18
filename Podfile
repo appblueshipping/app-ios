@@ -6,7 +6,7 @@ target 'tracking' do
   use_frameworks!
 
   # Pods for tracking
-  pod 'Google/Analytics'
+  pod 'Google/Analytics', '~> 2.0.4'
 
   target 'trackingTests' do
     inherit! :search_paths

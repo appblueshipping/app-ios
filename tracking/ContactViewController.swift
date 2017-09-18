@@ -23,11 +23,15 @@ class ContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.registerGoogleAnalytics(classForCoder: self.classForCoder)
+    }
+    
     func initSubViews() {
         self.navigationItem.titleView = logoView
         self.navigationItem.titleView = logoView
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LOGOUT", style: .plain, target: nil, action: nil)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_settings_white"), style: .plain, target: self, action: #selector(goToSettings))
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LOGOUT", style: .plain, target: nil, action: nil)
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_settings_white"), style: .plain, target: self, action: #selector(goToSettings))
         self.dismissKeyboard()
     }
 
@@ -57,9 +61,7 @@ extension ContactViewController: MFMailComposeViewControllerDelegate {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["jlima@anaivtecnologia.com.br"])
-            mail.setSubject("Teste")
-            mail.setMessageBody("Teste", isHTML: true)
+            mail.setToRecipients(["app@blueshipping.com.br"])
             
             self.present(mail, animated: true, completion: nil)
         } else {
